@@ -22,9 +22,8 @@ bitcoin = bitcoin[(bitcoin['Buy'] != 0) | (bitcoin['Sell'] != 0)]
 print(bitcoin.head(30))
 
 plt.figure(figsize=(12,6))
-plt.subplot(2,1,1)
 bitcoin['Close'].plot(label = 'Bitcoin')
-plt.scatter(bitcoin.index, bitcoin['Buy']*bitcoin['Close'], color = 'green', label = 'Buy', marker = '^')
-plt.scatter(bitcoin.index, bitcoin['Sell']*bitcoin['Close'], color = 'red', label = 'Sell', marker = 'v')
+plt.plot(bitcoin.index, bitcoin['Buy']*bitcoin['Close'], color = 'green', label = 'Buy')
+plt.plot(bitcoin.index, -bitcoin['Sell']*bitcoin['Close'], color = 'red', label = 'Sell')
 
 plt.show()
