@@ -48,5 +48,6 @@ model_9 = StackingClassifier(
     estimators=[("SGD", model_1), ("Tree", model_2), ("KNN", model_3)],
     final_estimator=KNeighborsClassifier(),
 )
+
 model_9.fit(X_train, y_train)
 print(f"StackingClassifier score: {model_9.score(X_test, y_test)}")
